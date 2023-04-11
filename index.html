@@ -23,32 +23,37 @@
             <tr>
                 <td id="logo">Riccardo Colella.</td>
                 <td id="navigation">
-                    <a href="#work">work</a>
+                    <a href="#work">me</a>
                     <a href="#bio">about</a>
-                    <a href="#contact">contact</a>
+                    <a onclick="calendlyFunction()">contact</a>
                 </td>
             </tr>
         </table>
     </header>
     <table id="top_part">
         <tr>
+            <td id="bluebackground" class="animated jackInTheBox" style="animation-delay:2.2s;">
+                <img src="src/rc.jpg" class="portrait" alt="Portrait" style="animation-delay:2.2s;">
+            </td>
             <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
-                <h1>My boss told me that I don't know my boundaries.</h1>
+                <h1 class="align-right">My boss told me that I don't know my boundaries.</h1>
                     <h2>So I fired him.</h2>
-                <button class="btn_one">Hire Me</button><br>
+                <button class="btn_one" onclick="calendlyFunction()">Hire Me</button><br>
                 <table>
                     <tr>
-                        <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="#magnify"><i class="fab fa-dribbble"></i></a></td>
-                        <td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="https://www.linkedin.com/in/riccardo-colella/"><i class="fab fa-linkedin"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="mailto:directcolellar@outlook.com"><i class="fa fa-envelope"></i></a></td>
                         <td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="https://github.com/RiccardoColella"><i class="fab fa-github"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="https://www.linkedin.com/in/riccardo-colella/"><i class="fab fa-linkedin"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="https://www.instagram.com/unitalianomedio/"><i class="fab fa-instagram"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="#magnify"><i class="fab fa-dribbble"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social"onclick="calendlyFunction()"><i class="fa fa-phone"></i></a></td>
                     </tr>
                 </table>
             </td>
-            <td id="rightImage" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
         </tr>
     </table>
     <div id="work">
-        <h1>work</h1>
+        <h1>me</h1>
         <div id="photos">
             <img onclick="magnify($(this).attr('src'))" src="https://images.unsplash.com/photo-1564163987330-cdd349ce5f4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80">
             <img onclick="magnify($(this).attr('src'))" src="https://images.unsplash.com/photo-1577996943427-df52c1fb01b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80">
@@ -66,55 +71,15 @@
             Who am I? Good question ehehe. You better look for me on LinkedIn. Probably you may find there more accurate information, as of now.
         </p>
     </div>
-    <div id="contact">
-        <h1>contact</h1>
-            <table>
-                <tr>
-                    <td>
-                        <div id="inner_div">
-                            <table id="inner_table">
-                                <tr>
-                                    <td><i class="fas fa-phone"></i> &nbsp; Contact me and I'll be happy to share with you my phone number</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-at"></i> &nbsp; colella.git@outlook.com</td>
-                                </tr>
-                                 <tr>
-                                    <td><i class="fas fa-fax"></i> &nbsp; +1 234 567 8910 (why not)</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-map-marker-alt"></i>
-                                    <div id="address">
-                                        Secret street,<br>
-                                        Munich,<br>
-                                        Germany
-                                    </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a class="social" href="#magnify"><i class="fab fa-dribbble"></i></a>
-                                        <a class="social" href="https://www.linkedin.com/in/riccardo-colella/"><i class="fab fa-linkedin"></i></a>
-                                        <a class="social" href="https://github.com/RiccardoColella"><i class="fab fa-github"></i></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </td>
-                    <td>
-                        <form>
-                            <input type="text" placeholder="name" required>
-                            <input type="email" placeholder="email" required><br>
-                            <textarea placeholder="your message" required rows="5"></textarea><br>
-                            <button class="btn_one">send</button>
-                        </form> 
-                    </td>
-                </tr>
-            </table>
-    </div>
+    
     <div id="footer">
         made on earth by a human. That human is not me, but he is funny.
     </div>
     <script src="index.js" type="text/javascript"></script>
 </body>
+<!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">function calendlyFunction() { Calendly.initPopupWidget({ url: 'https://calendly.com/riccardocolella/30min'}); }</script>
+<!-- Calendly badge widget end -->
 </html>
