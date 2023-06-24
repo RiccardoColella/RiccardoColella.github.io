@@ -1,85 +1,787 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Riccardo Colella</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TP7FQLY3E"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-9TP7FQLY3E');
-    </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/rc-logo-white.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div id="loading">
-        <div id="spinner"></div>
-    </div>
-    <div id="magnify">
-        <h1 onclick="closemagnify()"><i class="fas fa-times"></i></h1>
-        <div id="img_here"></div>
-    </div>
-    <header id="header" class="animated slideInDown" style="animation-delay:1.8s;">
-        <table>
-            <tr>
-                <td id="logo">Riccardo Colella.</td>
-                <td id="navigation">
-                    <a href="#work">me</a>
-                    <a href="#bio">about</a>
-                    <a onclick="calendlyFunction()">contact</a>
-                </td>
-            </tr>
-        </table>
-    </header>
-    <table id="top_part">
-        <tr>
-            <td id="bluebackground" class="animated jackInTheBox" style="animation-delay:2.2s;">
-                <img src="src/rc.jpg" class="portrait" alt="Portrait" style="animation-delay:2.2s;">
-            </td>
-            <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
-                <h1 class="align-right">My boss told me that I don't respect my boundaries.</h1>
-                    <h2>So I fired him.</h2>
-                <button class="btn_one" onclick="calendlyFunction()">Hire Me</button><br>
-                <table>
-                    <tr>
-                        <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="mailto:directcolellar@outlook.com"><i class="fa fa-envelope"></i></a></td>
-                        <td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="https://github.com/RiccardoColella"><i class="fab fa-github"></i></a></td>
-                        <td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="https://www.linkedin.com/in/riccardo-colella/"><i class="fab fa-linkedin"></i></a></td>
-                        <td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="https://www.instagram.com/unitalianomedio/"><i class="fab fa-instagram"></i></a></td>
-                        <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="#magnify"><i class="fab fa-dribbble"></i></a></td>
-                        <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" onclick="calendlyFunction()"><i class="fa fa-phone"></i></a></td>
-                        <td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="https://github.com/RiccardoColella/CV/blob/master/pdf/CV-RiccardoColella.pdf?raw=true"><i class="fa fa-file-pdf"></i></a></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-    <div id="work">
-        <h1>me</h1>
-        <div id="photos">
-            <img onclick="magnify($(this).attr('src'))" src="https://images.unsplash.com/photo-1564163987330-cdd349ce5f4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80">
-            <img onclick="magnify($(this).attr('src'))" src="https://images.unsplash.com/photo-1577996943427-df52c1fb01b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80">
-            <img onclick="magnify($(this).attr('src'))" src="https://images.unsplash.com/photo-1634819893803-3abddb5922fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80">
-            <img onclick="magnify($(this).attr('src'))" src="https://images.unsplash.com/photo-1586356415056-bd7a5c2bbef7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80">
-            <img onclick="magnify($(this).attr('src'))" src="https://images.unsplash.com/photo-1586886921381-140905277b7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80">
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/rc-round.png" alt="Riccardo Colella" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Riccardo Colella">Riccardo Colella</h1>
+
+          <p class="title">Software Engineer</p>
         </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:directcolellar@outlook.com" class="contact-link">directcolellar@outlook.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item" onclick="calendlyFunction()">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a class="contact-link">Click here!</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="storefront-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Hometown</p>
+
+              <address>Milano, ITA</address>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Munich, DE</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="mailto:directcolellar@outlook.com" class="social-link">
+              <ion-icon name="mail-outline"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/RiccardoColella" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/riccardo-colella/" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a onclick="calendlyFunction()" class="social-link">
+              <ion-icon name="call-outline"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/RiccardoColella/CV/blob/master/pdf/CV-RiccardoColella.pdf?raw=true" class="social-link">
+              <ion-icon name="document-text-outline"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" onclick="calendlyFunction()">Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I am a Computer Scientist and Engineer,  graduated at PoliMI, KTH and at EIT 
+            Digital.  Passionate about writing high-quality code and willing to learn new things.
+          </p>
+
+          <p>
+            I have interests in cybersecurity, in the financial industry, and into blockchains. 
+            I have been School President and I took part to many scientific competitions since 
+            high  school.  Thanks  to  these  experiences  I  learnt  to  organize  my  own/my  team 
+            work and to present the achieved results.  I'm learning German.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="icon-box">
+                <ion-icon name="code-outline"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Software development</h4>
+                <p class="service-item-text">
+                  The most modern and high-quality code at a professional level.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="icon-box">
+                <ion-icon name="cloud-outline"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Cloud operations</h4>
+                <p class="service-item-text">
+                  High-quality infrastructure operations at the professional level.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/k8s.png" alt="k8s icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Kubernetes</h4>
+                <p class="service-item-text">
+                  Development and management of resources in K8s environments.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="icon-box">
+                <ion-icon name="analytics-outline"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Automation</h4>
+                <p class="service-item-text">
+                  Automation and cloud automation for your environments.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - clients
+        -->
+
+        <section class="clients">
+
+          <h3 class="h3 clients-title">Collaborations</h3>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="https://climatestandard.net/">
+                <img src="./assets/images/climate-standard-logo.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="https://www.brainloop.com/">
+                <img src="./assets/images/brainloop.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="https://amadeus.com/">
+                <img src="./assets/images/amdeus.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="https://www.telenor.com/">
+                <img src="./assets/images/telenor.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="https://www.polimi.it/">
+                <img src="./assets/images/logo-polimi.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="https://www.eitdigital.eu/">
+                <img src="./assets/images/eitdigital.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="https://www.kth.se">
+                <img src="./assets/images/kth2.png" alt="client logo">
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">EIT Digital</h4>
+              <span>10/2019 - 07/2021</span>
+              <p class="timeline-text">
+                Double Degree programm.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">KTH Royal Institute of Technology</h4>
+              <span>10/2019 - 07/2021</span>
+              <p class="timeline-text">
+                Computer Science and Engineering Master Degree.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">TalTech Tallin University of Technology</h4>
+              <span>08/2020</span>
+              <p class="timeline-text">
+                Summer School: Secure e-Governance.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Politecnico di Milano</h4>
+              <span>10/2019 - 07/2021</span>
+              <p class="timeline-text">
+                Computer Science and Engineering Master Degree.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Politecnico di Milano</h4>
+              <span>10/2016 - 09/2019</span>
+              <p class="timeline-text">
+                Computer Science and Engineering Bachelor Degree.
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Automation Engineer: @Climate Standard</h4>
+              <span>2022 — Present</span>
+              <p class="timeline-text">
+                Responsible of Technology
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Platform Engineer: @Amadeus</h4>
+              <span>2021 — Present</span>
+              <p class="timeline-text">
+                • Set up monitoring and alerting for different middlewares, using Prometheus, Argos and Splunk
+                <br>
+                • Responsible for the Secret Management internal solution, I've updated and restructured it and its CI/CD pipeline.
+                <br>
+                • Developed the automation for deployment of an internal application, allowing e2e automated deployment to new clusters, using ArgoCD.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Data Scientist: @Telenor</h4>
+              <span>2021</span>
+              <p class="timeline-text">
+                Developed a TT res time estimation model able achieve a RMSE of 60 minutes by studying deeply the company's procedures and using ML regressors.
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Java, Python</h5>
+                <data value="80">80%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Openshift, K8s, Docker</h5>
+                <data value="80">60%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Azure</h5>
+                <data value="90">50%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 50%;"></div>
+              </div>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Terragrunt</h5>
+                <data value="70">40%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 40%;"></div>
+              </div>
+            </li>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Software Engineering</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Management</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Software Engineering</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Management</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web design</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="software engineering">
+              <a href="https://drive.google.com/file/d/1UJ4vz9gFezYomNbWZBrMr75gAQwX6Unh/view?usp=sharing">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Credit Card Fraud Detector</h3>
+
+                <p class="project-category">Software Engineering</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="software engineering">
+              <a href="https://drive.google.com/file/d/1enZ_Jb2vTmPwqBghBdvzCwoMOcX5bfZp/view?usp=sharing">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/readingcubes.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">The Connected Reading Cubes</h3>
+
+                <p class="project-category">Software Engineering</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/dnalogue.png" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DNAlogue</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="software engineering">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/gea++.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">GEA++</h3>
+
+                <p class="project-category">Software Engineering</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="software engineering">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/adrenaline.png" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Adrenaline</h3>
+
+                <p class="project-category">Software Engineering</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="software engineering">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/furhat.png" alt="metaspark" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Furhat - cooking robot</h3>
+
+                <p class="project-category">Software Engineering</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="management">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/gaia.png" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">G.A.I.A.</h3>
+
+                <p class="project-category">Management</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="software engineering">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/polissone.png" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Polissonne</h3>
+
+                <p class="project-category">Software Engineering</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="management">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/relaxident.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Relaxident</h3>
+
+                <p class="project-category">Management</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
     </div>
-    
-    <div id="footer">
-        made on earth by a human.
-    </div>
-    <script src="index.js" type="text/javascript"></script>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- Calendly badge widget begin -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script type="text/javascript">function calendlyFunction() { Calendly.initPopupWidget({ url: 'https://calendly.com/riccardocolella/30min'}); }</script>
+  <!-- Calendly badge widget end -->
 </body>
-<!-- Calendly badge widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script type="text/javascript">function calendlyFunction() { Calendly.initPopupWidget({ url: 'https://calendly.com/riccardocolella/30min'}); }</script>
-<!-- Calendly badge widget end -->
+
 </html>
