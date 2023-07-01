@@ -555,6 +555,9 @@ main {
   line-height: 1.6;
 }
 
+.service-svg-image-color {
+  filter: invert(35%) sepia(93%) saturate(2441%) hue-rotate(211deg) brightness(93%) contrast(92%)
+}
 
 /**
  * #testimonials 
